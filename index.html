@@ -57,6 +57,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.1.0/js/all.min.js"></script>
     <script src="./static/js/bulma-carousel.min.js"></script>
     <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/rerun-viewer.js" defer></script>
 </head>
 
 <body>
@@ -416,7 +417,7 @@
                         function loadRerunViewer() {
                             const container = document.getElementById('rerun-container');
                             const iframe = document.createElement('iframe');
-                            iframe.src = "https://app.rerun.io/version/0.21.0/index.html?url=https://huggingface.co/ethz-vlg/mvtracker-rrd/resolve/main/assets/rerun-results/4d-dress__lunge.rrd";
+                            iframe.src = rerunViewerUrl("https://app.rerun.io/version/0.21.0/index.html?url=https://huggingface.co/ethz-vlg/mvtracker-rrd/resolve/main/assets/rerun-results/4d-dress__lunge.rrd");
                             iframe.style.width = "100%";
                             iframe.style.height = "720px";
                             iframe.style.border = "none";
@@ -687,7 +688,7 @@
                         function loadRerunComparison() {
                             const container = document.getElementById('rerun-comparison-container');
                             const iframe = document.createElement('iframe');
-                            iframe.src = "https://app.rerun.io/version/0.21.0/index.html?url=https://huggingface.co/ethz-vlg/mvtracker-rrd/resolve/main/assets/rerun-comparisons/dexycb__seq0_kinect.rrd";
+                            iframe.src = rerunViewerUrl("https://app.rerun.io/version/0.21.0/index.html?url=https://huggingface.co/ethz-vlg/mvtracker-rrd/resolve/main/assets/rerun-comparisons/dexycb__seq0_kinect.rrd");
                             iframe.style.width = "100%";
                             iframe.style.height = "720px";
                             iframe.style.border = "none";
