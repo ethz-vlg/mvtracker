@@ -58,6 +58,18 @@
     <script src="./static/js/bulma-carousel.min.js"></script>
     <script src="./static/js/bulma-slider.min.js"></script>
     <script src="./static/js/rerun-viewer.js" defer></script>
+<style>
+  /* Poster button: keeps its size; on hover/tap it splits into the two poster sizes */
+  .poster-split, .poster-split:hover, .poster-split:focus { background: #363636; color: #fff; box-shadow: none; border-color: transparent; cursor: pointer; margin: 5px 0; }
+  .poster-split .opts { position: absolute; inset: 0; display: flex; border-radius: inherit; overflow: hidden; visibility: hidden; }
+  .poster-split .opts a { display: flex; align-items: center; justify-content: center; position: relative; margin: 0 !important; color: #fff; font-size: .8em; white-space: nowrap; }
+  .poster-split .opts a:first-child { flex: 1.7; padding-left: .5em; }
+  .poster-split .opts a + a { flex: 1; padding-right: .4em; }
+  .poster-split .opts a + a::before { content: ''; position: absolute; left: 0; top: 28%; bottom: 28%; border-left: 1px solid rgba(255,255,255,.35); }
+  .poster-split .opts a:hover { background: #292929; }
+  .poster-split:hover .opts, .poster-split:focus-within .opts { visibility: visible; }
+  .poster-split:hover .lab, .poster-split:focus-within .lab { visibility: hidden; }
+</style>
 </head>
 
 <body>
@@ -160,15 +172,20 @@
                               </a>
                             </span>
 
-                            <!-- Poster Link -->
+                            <!-- Poster Links: hover/tap splits the button into the two sizes -->
                             <span class="link-block">
-                              <a href="https://huggingface.co/ethz-vlg/mvtracker-rrd/resolve/main/assets/mvtracker_poster.pdf"
-                                 class="external-link button is-normal is-rounded is-dark">
-                                <span class="icon">
-                                  <i class="fa-solid fa-chalkboard"></i>
+                              <span class="external-link button is-normal is-rounded is-dark poster-split" tabindex="0">
+                                <span class="lab">
+                                  <span class="icon">
+                                    <i class="fa-solid fa-chalkboard"></i>
+                                  </span>
+                                  <span>Poster</span>
                                 </span>
-                                <span>Poster</span>
-                              </a>
+                                <span class="opts">
+                                  <a href="https://huggingface.co/ethz-vlg/mvtracker-rrd/resolve/main/assets/mvtracker_poster.pdf">84″×42″</a>
+                                  <a href="https://huggingface.co/ethz-vlg/mvtracker-rrd/resolve/main/assets/mvtracker_poster_A0.pdf">A0</a>
+                                </span>
+                              </span>
                             </span>
                         </div>
                     </div>
