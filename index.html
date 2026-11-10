@@ -67,8 +67,8 @@
   .poster-split .opts a + a { flex: 1; padding-right: .4em; }
   .poster-split .opts a + a::before { content: ''; position: absolute; left: 0; top: 28%; bottom: 28%; border-left: 1px solid rgba(255,255,255,.35); }
   .poster-split .opts a:hover { background: #292929; }
-  .poster-split:hover .opts, .poster-split:focus-within .opts { visibility: visible; }
-  .poster-split:hover .lab, .poster-split:focus-within .lab { visibility: hidden; }
+  .poster-split:hover .opts, .poster-split.open .opts { visibility: visible; }
+  .poster-split:hover .lab, .poster-split.open .lab { visibility: hidden; }
 </style>
 </head>
 
@@ -864,6 +864,15 @@
     });
 </script>
 
+<script>
+  // Poster button on touch screens: the first tap shows the two sizes, the second tap opens one.
+  document.addEventListener('click', function (e) {
+    document.querySelectorAll('.poster-split').forEach(function (b) {
+      if (!b.contains(e.target)) { b.classList.remove('open'); }
+      else if (!b.classList.contains('open') && !e.target.closest('.opts a')) { b.classList.add('open'); }
+    });
+  });
+</script>
 </body>
 
 </html>
