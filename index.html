@@ -67,8 +67,12 @@
   .poster-split .opts a + a { flex: 1; padding-right: .4em; }
   .poster-split .opts a + a::before { content: ''; position: absolute; left: 0; top: 28%; bottom: 28%; border-left: 1px solid rgba(255,255,255,.35); }
   .poster-split .opts a:hover { background: #292929; }
-  .poster-split:hover .opts, .poster-split.open .opts { visibility: visible; }
-  .poster-split:hover .lab, .poster-split.open .lab { visibility: hidden; }
+  .poster-split.open .opts { visibility: visible; }
+  .poster-split.open .lab { visibility: hidden; }
+  @media (hover: hover) {
+    .poster-split:hover .opts { visibility: visible; }
+    .poster-split:hover .lab { visibility: hidden; }
+  }
 </style>
 </head>
 
